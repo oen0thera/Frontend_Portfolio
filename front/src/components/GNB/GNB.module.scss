@@ -1,0 +1,43 @@
+.GNB {
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  border-bottom: #948a8a;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+}
+.GNB_title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  height: auto;
+  h1 {
+    font-family: "neurimbo";
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  h3 {
+    font-family: "neurimbo";
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.4);
+    margin: 0;
+  }
+}
+.nav_container {
+  ul {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    gap: 1.6rem;
+    li {
+      cursor: pointer;
+    }
+  }
+}
