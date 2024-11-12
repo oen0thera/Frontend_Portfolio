@@ -1,6 +1,6 @@
 .GNB {
   width: 100%;
-  height: fit-content;
+  height: 7.5rem;
   padding: 2rem;
   border-bottom: #948a8a;
   box-sizing: border-box;
@@ -8,8 +8,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
   align-content: center;
   position: fixed;
+  z-index: 10;
 }
 .GNB_title {
   display: flex;
