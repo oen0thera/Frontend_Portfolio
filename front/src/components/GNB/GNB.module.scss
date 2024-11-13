@@ -14,8 +14,7 @@
 .GNB_title {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
+  justify-content: center;
   height: auto;
   h1 {
     font-family: "neurimbo";
