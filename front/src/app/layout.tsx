@@ -23,10 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className={styles.body_wrapper}>
-          <GNB />
-          {children}
-        </div>
+        <GNB />
+        {children}
       </body>
     </html>
   );
