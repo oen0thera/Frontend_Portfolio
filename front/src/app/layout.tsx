@@ -7,6 +7,9 @@ import styles from "./layout.module.scss";
 export const metadata: Metadata = {
   title: "[FrontEnd][oen0thera] Kim-WonJin Portfolio",
   description: "github: https://github.com/oen0thera",
+  icons: {
+    icon: "/icons/favicon.svg",
+  },
 };
 
 export const neurimbo = localFont({
