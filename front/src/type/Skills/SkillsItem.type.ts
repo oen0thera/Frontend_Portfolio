@@ -5,8 +5,8 @@ export type SkillsItemProps = {
 
 export type SkillsItemContent = TechStackEnum[];
 export enum SkillsItemType {
-  FAMILIAR = "Familiar",
-  EXPERIENCED = "Experienced",
+  FAMILIAR = "FAMILIAR",
+  EXPERIENCED = "EXPERIENCED",
 }
 export enum TechStackEnum {
   NEXT = "Next.js",
