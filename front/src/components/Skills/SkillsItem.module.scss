@@ -1,0 +1,18 @@
+.item_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.item_subtitle {
+  display: flex;
+  width: 100%;
+  padding: 2rem 10rem;
+}
+.chip_container {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 10rem;
+}
