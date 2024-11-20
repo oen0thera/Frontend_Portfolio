@@ -7,7 +7,8 @@ import {
 import Image from "next/image";
 
 import styles from "./AboutItem.module.scss";
-
+import Icons from "@/components/Icons/Icons";
+import { IconsType } from "@/type/Icons/Icons.type";
 export default function AboutItem({ item }: { item: AboutItemProps }) {
   return (
     <div className={styles.item_container}>
@@ -25,8 +26,9 @@ export default function AboutItem({ item }: { item: AboutItemProps }) {
             <div className={styles.profile_content}>
               {Object.entries(item.content).map(([key, value]) => {
                 return (
-                  <div className={styles.profile_content_item}>
+                  <div key={key} className={styles.profile_content_item}>
                     <b>
+                      <Icons src={IconsType[key as keyof typeof IconsType]} />
                       {
                         AboutItemProfileEnum[
                           key as keyof typeof AboutItemProfileEnum

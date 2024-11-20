@@ -1,9 +1,14 @@
 .skills {
   display: flex;
   flex-direction: column;
+  border-radius: 5rem;
+  box-shadow: 0 0 0.5rem 0;
+  background-color: white;
   gap: 5rem;
+  align-items: center;
 }
 .skills_title {
+  width: 100%;
   h1 {
     padding: 2rem;
     width: 70%;

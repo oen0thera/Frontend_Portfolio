@@ -1,6 +1,9 @@
 .about {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-radius: 5rem;
+  box-shadow: 0 0 0.5rem 0;
   gap: 5rem;
 }
 .about_title {

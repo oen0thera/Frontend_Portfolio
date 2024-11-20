@@ -18,9 +18,10 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
       <h1 className={styles.item_subtitle}>{`${item.type}`}</h1>
       <div className={styles.chip_wrapper}>
         <div className={styles.chip_container}>
-          {item.content.map((element) => {
+          {item.content.map((element, idx) => {
             return (
               <Chip
+                key={idx}
                 name={element}
                 color={TechStackColor[getEnumKey(element)]}
                 isDark={
