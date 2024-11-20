@@ -50,6 +50,7 @@
 .profile_content_item {
   display: inline-grid;
   grid-template-columns: 0.3fr 1fr;
+  align-items: start;
   b {
     display: flex;
     flex-direction: row;
