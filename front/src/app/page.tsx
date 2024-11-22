@@ -14,6 +14,8 @@ export default function Home() {
   const sectionRefs: Record<SectionType, RefObject<HTMLDivElement>> = {
     About: useRef<HTMLDivElement>(null),
     Skills: useRef<HTMLDivElement>(null),
+    Projects: useRef<HTMLDivElement>(null),
+    Contact: useRef<HTMLDivElement>(null),
   };
 
   useEffect(() => {
@@ -43,11 +45,7 @@ export default function Home() {
               sectionName,
             ]);
           }
-          console.log(
-            sectionName,
-            entry.boundingClientRect.top + scrollHeight,
-            scrollHeight
-          );
+
           if (entry.boundingClientRect.top + scrollHeight < scrollHeight) {
             setIntersectingSection((prevSection) =>
               prevSection.filter((section) => {

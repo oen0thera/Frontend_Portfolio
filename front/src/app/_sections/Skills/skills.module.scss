@@ -4,7 +4,6 @@
   border-radius: 5rem;
   box-shadow: 0 0 0.5rem 0;
   background-color: white;
-  gap: 5rem;
   align-items: center;
 }
 .skills_title {
@@ -26,4 +25,11 @@
     flex-direction: row;
     justify-content: center;
   }
+}
+.skills_container {
+  margin: 5rem 20rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px 0;
+  border-radius: 5rem;
+  background-color: #f0f0f0;
 }
