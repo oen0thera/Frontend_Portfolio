@@ -8,9 +8,12 @@ export type AboutItemProps = {
 
 export enum AboutItemType {
   PROFILE = "PROFILE",
+  INTRO = "INTRODUCTION",
 }
 
-export type AboutItemContent = AboutItemProfileContent;
+export type AboutItemContent =
+  | AboutItemProfileContent
+  | AboutItemIntroductionContent;
 
 export type AboutItemProfileContent = {
   name: string;
@@ -31,3 +34,7 @@ export enum AboutItemProfileEnum {
   education = "학력",
   github = "깃허브",
 }
+
+export type AboutItemIntroductionContent = {
+  intro: string;
+};
