@@ -3,6 +3,7 @@ import "./globals.scss";
 import localFont from "next/font/local";
 import GNB from "@/components/GNB/GNB";
 import styles from "./layout.module.scss";
+import StoreProvider from "@/store/Provider/StoreProvider";
 
 export const metadata: Metadata = {
   title: "[FrontEnd][oen0thera] Kim-WonJin Portfolio",
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <GNB />
-        {children}
+        <StoreProvider>
+          <GNB />
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );
