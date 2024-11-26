@@ -1,0 +1,34 @@
+@import "../../../styles/mixin.scss";
+
+.item_container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 4em;
+  width: 100%;
+  @include lg {
+    flex-direction: column;
+  }
+}
+.item_subtitle {
+  display: block;
+  font-size: calc(40 * 100vw / 1920);
+  overflow-wrap: break-word;
+  padding: 2rem 10rem;
+  justify-content: flex-end;
+  white-space: pre;
+  @include lg {
+    text-align: center;
+  }
+}
+.chip_container {
+  display: grid;
+  grid-template-columns: repeat(4, calc(150 * 100vw / 1920));
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 2px 0px inset;
+  gap: 0.5em;
+  padding: 2em;
+}

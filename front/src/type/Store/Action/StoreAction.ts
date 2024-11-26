@@ -5,9 +5,9 @@ export type SetScrollAction = {
   payload: SectionType;
 };
 
-export type DummyAction = {
-  type: "dummy";
-  payload: number;
+export type SetCurrSectionAction = {
+  type: "setCurrSection";
+  payload: SectionType;
 };
 
 export const setScroll = (value: SectionType): SetScrollAction => ({
@@ -15,19 +15,19 @@ export const setScroll = (value: SectionType): SetScrollAction => ({
   payload: value,
 });
 
-export const dummy = (value: number): DummyAction => ({
-  type: "dummy",
+export const setCurrSection = (value: SectionType): SetCurrSectionAction => ({
+  type: "setCurrSection",
   payload: value,
 });
 
 type ActionListType = {
   setScroll: typeof setScroll;
-  dummy: typeof dummy;
+  setCurrSection: typeof setCurrSection;
 };
 
 export const ActionList: ActionListType = {
   setScroll: setScroll,
-  dummy: dummy,
+  setCurrSection: setCurrSection,
 };
 
 export type ActionKey = keyof typeof ActionList;
@@ -35,4 +35,4 @@ export type ActionParam = {
   [K in ActionKey]: Parameters<(typeof ActionList)[K]>[0];
 };
 
-export type StoreAction = SetScrollAction | DummyAction;
+export type StoreAction = SetScrollAction | SetCurrSectionAction;

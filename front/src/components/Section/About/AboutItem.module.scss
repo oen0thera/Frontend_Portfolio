@@ -1,9 +1,16 @@
+@import "../../../styles/mixin.scss";
 .item_container {
   width: 100%;
-  height: 700px;
+  height: 100vh;
+  min-height: fit-content;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  padding: 4em;
+  @include lg {
+    padding: 2em;
+  }
 }
 .item_subtitle {
   display: flex;
@@ -16,35 +23,52 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 10rem;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 2px 0px inset;
+  margin: 2em;
+  gap: 2em;
   box-sizing: border-box;
+  @include lg {
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 0;
+  }
 }
+
 .profile_image {
-  width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: relative;
+  flex: 1;
+  @include lg {
+    justify-content: center;
+    align-items: center;
+  }
 }
 .profile_image_wrapper {
-  width: 500px;
-  height: 500px;
-  position: absolute;
+  width: calc(400 * 100vw / 1920);
+  height: calc(400 * 100vw / 1920);
   border: 1px solid black;
   border-radius: 50%;
   box-shadow: 0 0 8px 0;
 }
 .profile_content {
-  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: calc(24 * 100vw / 1920);
   font-weight: 500;
   font-family: "neurimbo";
+  white-space: pre;
   gap: 10px;
+  flex: 1;
+  @include lg {
+    width: fit-content;
+  }
 }
 .profile_content_item {
   display: inline-grid;
@@ -63,10 +87,14 @@
   }
 }
 .intro {
-  padding: 0 10rem;
+  padding: 0 5em;
   display: flex;
   justify-content: center;
   text-align: center;
   white-space: pre-wrap;
-  font-size: 1.5rem;
+  font-size: calc(24 * 100vw / 1920);
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 2px 0px inset;
+  padding: 2em;
 }

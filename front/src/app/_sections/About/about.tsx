@@ -1,4 +1,4 @@
-import AboutItem from "@/components/About/AboutItem";
+import AboutItem from "@/components/Section/About/AboutItem";
 import styles from "./about.module.scss";
 import { AboutItemProps, AboutItemType } from "@/type/About/AboutItem.type";
 export default function About() {

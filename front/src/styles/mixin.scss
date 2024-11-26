@@ -1,0 +1,7 @@
+@import "./variable";
+
+@mixin lg {
+  @media (max-width:#{$breakpoint-lg}) {
+    @content;
+  }
+}
