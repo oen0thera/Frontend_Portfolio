@@ -1,0 +1,33 @@
+@import "../../../styles/mixin.scss";
+.item_container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 4em;
+  width: 100%;
+  @include lg {
+    flex-direction: column;
+  }
+}
+.item_subtitle {
+  display: block;
+  font-size: calc(40 * 100vw / 1920);
+  overflow-wrap: break-word;
+  padding: 2rem 10rem;
+  justify-content: flex-end;
+  white-space: pre;
+  @include lg {
+    text-align: center;
+  }
+}
+
+.item_content {
+  display: flex;
+  flex-direction: row;
+}
+.project_preview {
+  width: 100%;
+}
+.project_description {
+  width: 100%;
+}

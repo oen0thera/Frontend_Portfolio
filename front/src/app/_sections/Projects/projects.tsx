@@ -1,4 +1,6 @@
+import Canvas from "@/components/Canvas/Canvas";
 import styles from "./projects.module.scss";
+import ProjectsItem from "@/components/Section/Projects/ProjectsItem";
 
 export default function Projects() {
   return (
@@ -9,7 +11,9 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className={styles.projects_container}></div>
+      <div className={styles.projects_container}>
+        <ProjectsItem item={{ type: "" }} />
+      </div>
     </div>
   );
 }
