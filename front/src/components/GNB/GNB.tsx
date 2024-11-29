@@ -4,12 +4,12 @@ import styles from "./GNB.module.scss";
 import select from "@/app/utils/Selector";
 import { SectionType } from "@/type/Section/Section.type";
 import useDispatcher from "@/app/utils/Dispatcher";
+import { useEffect, useState } from "react";
 export default function GNB() {
   const navList: SectionType[] = ["About", "Skills", "Projects", "Contact"];
   const dispatch = useDispatcher();
-  const selection = select("selectedSection");
-  const scrollTo = (nav: SectionType) => {
-    console.log(selection);
+  const currSection = select("currSection");
+  const setSection = (nav: SectionType) => {
     dispatch("setScroll", nav);
   };
 
@@ -20,9 +20,17 @@ export default function GNB() {
         <h3>{`@oen0thera`}</h3>
       </div>
       <div className={styles.nav_container}>
-        <ul>
+        <ul className={styles.nav_ul}>
           {navList.map((nav, idx) => {
-            return <li key={idx} onClick={() => scrollTo(nav)}>{`${nav}`}</li>;
+            return (
+              <li
+                key={idx}
+                className={`${styles.nav} ${
+                  currSection === nav ? styles.active : null
+                }`}
+                onClick={() => setSection(nav)}
+              >{`${nav}`}</li>
+            );
           })}
         </ul>
       </div>
