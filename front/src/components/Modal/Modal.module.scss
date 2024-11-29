@@ -1,0 +1,22 @@
+.modal_background {
+  display: none;
+  &.active {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: dim-background 1s;
+    z-index: 11;
+  }
+}
+
+@keyframes dim-background {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}

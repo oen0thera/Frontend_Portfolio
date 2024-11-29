@@ -13,7 +13,7 @@ export default function Section({
   intersectingSections,
   sectionRefs,
 }: SectionProps) {
-  const section = select("selectedSection");
+  const section = select("selectedSection") as SectionType;
 
   useEffect(() => {
     const scrollTo = (target: SectionType | null) => {

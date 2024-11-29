@@ -3,6 +3,7 @@ import { StoreAction } from "@/type/Store/Action/StoreAction";
 export type AppState = {
   selectedSection: SectionType | null;
   currSection: SectionType | null;
+  modalState: boolean;
 };
 
 export type StateKey = keyof AppState;
@@ -10,6 +11,7 @@ export type StateKey = keyof AppState;
 const initialState = {
   selectedSection: null,
   currSection: null,
+  modalState: false,
 };
 
 export const rootReducer = (
@@ -26,6 +28,11 @@ export const rootReducer = (
       return {
         ...state,
         currSection: action.payload,
+      };
+    case "setOpenModal":
+      return {
+        ...state,
+        modalState: action.payload,
       };
     default:
       return state;
