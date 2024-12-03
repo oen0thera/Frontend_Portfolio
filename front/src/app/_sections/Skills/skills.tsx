@@ -1,4 +1,4 @@
-import SkillsItem from "@/components/Skills/SkillsItem";
+import SkillsItem from "@/components/Section/Skills/SkillsItem";
 import styles from "./skills.module.scss";
 import {
   SkillsItemContent,
