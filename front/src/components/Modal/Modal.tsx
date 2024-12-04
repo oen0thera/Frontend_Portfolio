@@ -2,6 +2,7 @@
 import select from "@/app/utils/Selector";
 import styles from "./Modal.module.scss";
 import useDispatcher from "@/app/utils/Dispatcher";
+import Timeline from "@/components/Timeline/Timeline";
 export default function Modal() {
   const modalState = select("modalState") as boolean;
   const dispatch = useDispatcher();
@@ -14,6 +15,10 @@ export default function Modal() {
         modalState ? styles.active : null
       }`}
       onClick={closeModal}
-    ></div>
+    >
+      <div className={styles.modal}>
+        <Timeline />
+      </div>
+    </div>
   );
 }
