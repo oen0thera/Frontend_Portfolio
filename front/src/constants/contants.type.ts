@@ -7,13 +7,13 @@ export const projects: ProjectsItemProps[] = [
     type: "important",
   },
   {
-    name: "project2",
-    preview: "/projects",
+    name: "Commonplus",
+    preview: "/projects/Commonplus.png",
     type: "important",
   },
   {
-    name: "project3",
-    preview: "/projects",
+    name: "Bemo",
+    preview: "/projects/Bemo.png",
     type: "important",
   },
 ];
