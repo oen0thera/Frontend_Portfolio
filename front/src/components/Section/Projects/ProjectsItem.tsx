@@ -5,12 +5,14 @@ import Canvas from "@/components/Canvas/Canvas";
 import { useEffect, useState } from "react";
 import useDispatcher from "@/app/utils/Dispatcher";
 import select from "@/app/utils/Selector";
+import { projects } from "@/constants/contants.type";
 export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
   const dispatch = useDispatcher();
   const [active, setActive] = useState(false);
   const modalState = select("modalState");
   const openModal = () => {
     const setOpenModal = () => {
+      dispatch("setModalContent", projects);
       dispatch("setOpenModal", true);
     };
     setOpenModal();
