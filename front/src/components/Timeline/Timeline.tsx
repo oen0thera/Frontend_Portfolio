@@ -48,7 +48,9 @@ export default function Timeline({ project }: { project: TimelineProps }) {
                 key={idx}
               >
                 <div className={styles.branch_point}>
-                  <div className={styles.time}>{convertDate(project.time)}</div>
+                  <div className={styles.time}>
+                    {convertDate(new Date(project.time))}
+                  </div>
                 </div>
                 <div className={styles.branch_content}>{project.name}</div>
               </div>
@@ -65,7 +67,9 @@ export default function Timeline({ project }: { project: TimelineProps }) {
                   <div className={styles.branch_content}>{project.name}</div>
                 </div>
                 <div className={styles.branch_point}>
-                  <div className={styles.time}>{convertDate(project.time)}</div>
+                  <div className={styles.time}>
+                    {convertDate(new Date(project.time))}
+                  </div>
                 </div>
               </div>
             );

@@ -1,6 +1,6 @@
 export type ProjectsItemProps = {
   name: string;
   preview: string;
-  time: Date;
+  time: string;
   type: string;
 };
