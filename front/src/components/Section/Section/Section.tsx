@@ -5,7 +5,7 @@ import {
   SectionType,
 } from "@/type/Section/Section.type";
 import styles from "./section.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import select from "@/app/utils/Selector";
 
 export default function Section({
@@ -13,7 +13,7 @@ export default function Section({
   intersectingSections,
   sectionRefs,
 }: SectionProps) {
-  const section = select("selectedSection");
+  const section = select("selectedSection") as SectionType;
 
   useEffect(() => {
     const scrollTo = (target: SectionType | null) => {

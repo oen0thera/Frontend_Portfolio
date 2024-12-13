@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import GNB from "@/components/GNB/GNB";
 import styles from "./layout.module.scss";
 import StoreProvider from "@/store/Provider/StoreProvider";
+import Modal from "@/components/Modal/Modal";
 
 export const metadata: Metadata = {
   title: "[FrontEnd][oen0thera] Kim-WonJin Portfolio",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <StoreProvider>
+          <Modal />
           <GNB />
           {children}
         </StoreProvider>
