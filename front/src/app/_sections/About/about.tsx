@@ -3,7 +3,7 @@ import styles from "./about.module.scss";
 import { AboutItemProps, AboutItemType } from "@/type/About/AboutItem.type";
 export default function About() {
   const AboutProfile: AboutItemProps = {
-    image: "/icons/favicon.svg",
+    image: "/icons/profile.png",
     type: AboutItemType.PROFILE,
     content: {
       name: "김원진",

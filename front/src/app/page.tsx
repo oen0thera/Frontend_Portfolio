@@ -12,6 +12,7 @@ import Projects from "@/app/_sections/Projects/projects";
 
 export default function Home() {
   const [scrollHeight, setScrollHeight] = useState(0);
+  const [scrolling, setScrolling] = useState(false);
   const [intersectingSection, setIntersectingSection] = useState<SectionType[]>(
     []
   );
@@ -50,17 +51,32 @@ export default function Home() {
               setSection.add(sectionName);
               return Array.from(setSection);
             });
+            console.log(sectionName);
+
             dispatch("setCurrSection", sectionName);
           }
-          console.log(
-            sectionName,
-            entry.boundingClientRect.top + scrollHeight + 300,
-            scrollHeight + window.innerHeight
-          );
+          // console.log(
+          //   "(",
+          //   entry.boundingClientRect.top,
+          //   scrollHeight,
+          //   150 * window.innerHeight,
+          //   ")",
+          //   "(",
+          //   scrollHeight,
+          //   window.innerHeight,
+          //   ")",
+          //   sectionName,
+          //   entry.boundingClientRect.top +
+          //     scrollHeight +
+          //     (150 * window.innerHeight) / 1080,
+          //   scrollHeight + window.innerHeight
+          // );
           if (
-            entry.boundingClientRect.top + scrollHeight + 300 >
-            scrollHeight + window.innerHeight
+            !scrolling &&
+            entry.boundingClientRect.top + scrollHeight + 150 >
+              scrollHeight + window.innerHeight
           ) {
+            setScrolling(true);
             setIntersectingSection((prevSection) => {
               if (sectionName !== "About") {
                 return prevSection.filter((section) => {
@@ -73,7 +89,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     Object.values(sectionRefs).forEach((ref) => {
       if (ref.current) observer.observe(ref.current);
@@ -82,13 +98,10 @@ export default function Home() {
     return () => {
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) observer.unobserve(ref.current);
+        setScrolling(false);
       });
     };
   }, [scrollHeight]);
-
-  useEffect(() => {
-    console.log(section);
-  }, [section]);
 
   return (
     <div className={styles.page_container}>
