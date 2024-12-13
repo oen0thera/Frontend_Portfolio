@@ -24,7 +24,6 @@ export default function Timeline({ project }: { project: TimelineProps }) {
   }, [separate]);
 
   const convertDate = (date: Date) => {
-    console.log(date);
     return date.getMonth() < 1
       ? `${date.getFullYear() - 1}.${12}`
       : `${date.getFullYear()}.${

@@ -51,13 +51,26 @@ export default function Home() {
               setSection.add(sectionName);
               return Array.from(setSection);
             });
+            console.log(sectionName);
+
             dispatch("setCurrSection", sectionName);
           }
-          console.log(
-            sectionName,
-            entry.boundingClientRect.top + scrollHeight + 150,
-            scrollHeight + window.innerHeight
-          );
+          // console.log(
+          //   "(",
+          //   entry.boundingClientRect.top,
+          //   scrollHeight,
+          //   150 * window.innerHeight,
+          //   ")",
+          //   "(",
+          //   scrollHeight,
+          //   window.innerHeight,
+          //   ")",
+          //   sectionName,
+          //   entry.boundingClientRect.top +
+          //     scrollHeight +
+          //     (150 * window.innerHeight) / 1080,
+          //   scrollHeight + window.innerHeight
+          // );
           if (
             !scrolling &&
             entry.boundingClientRect.top + scrollHeight + 150 >
@@ -76,7 +89,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     Object.values(sectionRefs).forEach((ref) => {
       if (ref.current) observer.observe(ref.current);
