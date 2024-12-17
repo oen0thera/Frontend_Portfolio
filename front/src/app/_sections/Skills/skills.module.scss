@@ -7,6 +7,10 @@
   box-shadow: 0 0 0.5rem 0;
   background-color: white;
   padding: 2em;
+  @include mo-sm {
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 .skills_title {
   width: 100%;
@@ -17,7 +21,7 @@
     flex-direction: row;
     justify-content: center;
     font-weight: 600;
-    font-size: calc(80 * 100vw / 1920);
+    font-size: 5rem;
     font-family: var(--font-neurimbo);
     border-bottom: 3px solid black;
   }

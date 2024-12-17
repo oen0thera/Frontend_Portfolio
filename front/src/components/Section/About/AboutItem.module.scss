@@ -108,6 +108,9 @@
   &.click {
     animation: container-click 0.6s;
   }
+  @include mo-sm {
+    font-size: 0.7rem;
+  }
 }
 
 @keyframes text-pop-up-top {
