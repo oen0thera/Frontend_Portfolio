@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: repeat(3, calc(130 * 100vw / 1920));
   justify-content: center;
-  gap: 0.5rem;
   background-color: white;
   border-radius: 50px;
   box-shadow: 0 0 2px 0px inset;
@@ -29,6 +28,11 @@
   }
   @include pc-sm {
     grid-template-columns: repeat(4, calc(150 * 100vw / 1920));
+  }
+  @include mo-sm {
+    grid-template-columns: repeat(3, 3em);
+    padding: 1.2em;
+    border-radius: 20px;
   }
 }
 
