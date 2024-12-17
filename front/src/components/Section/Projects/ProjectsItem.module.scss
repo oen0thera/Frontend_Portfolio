@@ -33,7 +33,7 @@
     aspect-ratio: 0;
     flex-direction: column;
   }
-  d changes &.hover {
+  &.hover {
     .project_preview {
       transform: perspective(600px) rotateY(10deg);
       box-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
