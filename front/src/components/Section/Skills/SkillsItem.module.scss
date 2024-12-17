@@ -3,6 +3,7 @@
 .chip_wrapper {
   flex-grow: 1;
 }
+
 .chip_container {
   display: grid;
   grid-template-columns: repeat(3, calc(130 * 100vw / 1920));
