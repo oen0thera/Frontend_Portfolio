@@ -1,7 +1,17 @@
 @import "./variable";
 
-@mixin lg {
+@mixin pc-lg {
   @media (max-width:#{$breakpoint-lg}) {
+    @content;
+  }
+}
+@mixin pc-sm {
+  @media (max-width:#{$breakpoint-sm}) {
+    @content;
+  }
+}
+@mixin mo-md {
+  @media (max-width:#{$breakpoint-m-sm}) {
     @content;
   }
 }
