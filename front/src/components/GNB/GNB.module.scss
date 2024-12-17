@@ -20,12 +20,12 @@
   justify-content: center;
   height: auto;
   h1 {
-    font-family: "neurimbo";
+    font-family: var(--font-neurimbo);
     font-size: 1em;
     margin: 0;
   }
   h3 {
-    font-family: "neurimbo";
+    font-family: var(--font-neurimbo);
     font-size: 0.8em;
     color: rgba(0, 0, 0, 0.4);
     margin: 0;
@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "neurimbo";
+  font-family: var(--font-neurimbo);
   font-weight: 500;
   ul {
     display: flex;
