@@ -1,3 +1,4 @@
+@import "../../styles/mixin.scss";
 .chip {
   display: flex;
   justify-content: center;
@@ -14,6 +15,12 @@
   &.small {
     min-width: 32px;
     height: 16px;
+    border-radius: 10px;
+  }
+  @include mo-sm {
+    font-size: 0.6rem;
+    min-width: 48px;
+    height: 24px;
     border-radius: 10px;
   }
 }

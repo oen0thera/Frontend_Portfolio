@@ -11,6 +11,11 @@
   }
 }
 @mixin mo-md {
+  @media (max-width:#{$breakpoint-m-md}) {
+    @content;
+  }
+}
+@mixin mo-sm {
   @media (max-width:#{$breakpoint-m-sm}) {
     @content;
   }
