@@ -1,36 +1,44 @@
-@import "../../../styles/mixin.scss";
+@import "../../styles/mixin.scss";
 
-.chip_wrapper {
-  flex-grow: 1;
-}
-.chip_container {
-  display: grid;
-  grid-template-columns: repeat(3, calc(130 * 100vw / 1920));
+.item_container {
+  width: 100%;
+  height: fit-content;
+  min-height: fit-content;
+  display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  background-color: white;
-  border-radius: 50px;
-  box-shadow: 0 0 2px 0px inset;
-  gap: 0.5em;
-  padding: 2em;
+  align-items: center;
+  flex-direction: column;
+  padding: 4em;
+  @include pc-lg {
+    padding: 1em;
+  }
+  &:hover {
+    h1 {
+      animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateY(-4px);
+      transform-origin: 50% 50%;
+      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
+        0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
+        0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
 
-  &.hover {
-    animation: container-pop 0.6s;
-    box-shadow: 0 1px #555555, 0 2px #555555, 0 3px #555555, 0 4px #555555,
-      0 5px #555555, 0 6px #555555, 0 7px #555555, 0 8px #555555;
-    transform: translateY(-8px);
+    cursor: pointer;
   }
-  &.leave {
-    animation: container-leave 0.6s;
-  }
-  &.click {
-    animation: container-click 0.6s;
-  }
-  @include pc-sm {
-    grid-template-columns: repeat(4, calc(150 * 100vw / 1920));
+  &:active {
+    .profile {
+      animation: container-click 0.6s;
+    }
+    .intro {
+      animation: container-click 0.6s;
+    }
   }
 }
-
+.item_subtitle {
+  display: flex;
+  flex-grow: 0.5;
+  align-items: center;
+  justify-content: center;
+}
 @keyframes text-pop-up-top {
   0% {
     transform: translateY(0);
@@ -55,18 +63,6 @@
     box-shadow: 0 1px #555555, 0 2px #555555, 0 3px #555555, 0 4px #555555,
       0 5px #555555, 0 6px #555555, 0 7px #555555, 0 8px #555555;
     transform: translateY(-8px);
-  }
-}
-@keyframes container-leave {
-  0% {
-    box-shadow: 0 1px #555555, 0 2px #555555, 0 3px #555555, 0 4px #555555,
-      0 5px #555555, 0 6px #555555, 0 7px #555555, 0 8px #555555;
-    transform: translateY(-8px);
-  }
-  100% {
-    box-shadow: 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555, 0 0 #555555,
-      0 0 #555555, 0 0 #555555, 0 0 #555555;
-    transform: translateY(0);
   }
 }
 @keyframes container-click {

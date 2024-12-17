@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import GNB from "@/components/GNB/GNB";
 import styles from "./layout.module.scss";
 import StoreProvider from "@/store/Provider/StoreProvider";
+import Modal from "@/components/Modal/Modal";
 
 export const metadata: Metadata = {
   title: "[FrontEnd][oen0thera] Kim-WonJin Portfolio",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const neurimbo = localFont({
+const neurimbo = localFont({
   src: "../../public/fonts/neurimboGothicRegular.otf",
   display: "swap",
   variable: "--font-neurimbo",
@@ -27,10 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StoreProvider>
-          <GNB />
-          {children}
-        </StoreProvider>
+        <main className={neurimbo.className}>
+          <StoreProvider>
+            <Modal />
+            <GNB />
+            {children}
+          </StoreProvider>
+        </main>
       </body>
     </html>
   );

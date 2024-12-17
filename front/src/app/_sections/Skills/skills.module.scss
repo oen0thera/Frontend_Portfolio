@@ -1,3 +1,5 @@
+@import "../../../styles/mixin.scss";
+
 .skills {
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@
     justify-content: center;
     font-weight: 600;
     font-size: calc(80 * 100vw / 1920);
-    font-family: "neurimbo";
+    font-family: var(--font-neurimbo);
     border-bottom: 3px solid black;
   }
   .title_container {
@@ -28,10 +30,16 @@
 }
 .skills_container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 2rem 4rem;
   box-sizing: border-box;
   box-shadow: 0 0 4px 0;
   border-radius: 5rem;
   background-color: #f0f0f0;
+  @include pc-lg {
+    margin: 0;
+  }
+  @include pc-sm {
+    flex-direction: column;
+  }
 }

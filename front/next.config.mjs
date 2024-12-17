@@ -1,5 +1,8 @@
 const nextConfig = {
-  /* config options here */
+  trailingSlash: false,
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
-
 export default nextConfig;
