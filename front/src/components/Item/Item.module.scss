@@ -9,9 +9,6 @@
   align-items: center;
   flex-direction: column;
   padding: 4em;
-  @include pc-lg {
-    padding: 1em;
-  }
   &:hover {
     h1 {
       animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -21,8 +18,6 @@
         0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc,
         0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
     }
-
-    cursor: pointer;
   }
   &:active {
     .profile {
