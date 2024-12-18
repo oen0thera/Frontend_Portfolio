@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 5rem;
-  box-shadow: 0 0 0.5rem 0;
+  border-radius: 0;
+  box-shadow: none;
   padding: 2em;
   @include mo-sm {
     border-radius: 0;
@@ -34,14 +34,11 @@
 .about_container {
   display: flex;
   flex-direction: column;
-  margin: 2rem 4rem;
+  margin: 0;
   box-sizing: border-box;
   box-shadow: 0 0 4px 0;
   border-radius: 5rem;
   background-color: #f0f0f0;
-  @include mo-sm {
-    margin: 0;
-  }
 }
 .about_container_item_ul {
   margin: 0;
