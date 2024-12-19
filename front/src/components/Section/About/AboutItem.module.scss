@@ -13,7 +13,7 @@
   margin: 2em;
   gap: 2em;
   box-sizing: border-box;
-  @include pc-lg {
+  @include pc-sm {
     flex-direction: column;
     align-items: center;
     padding: 4em 0;
@@ -27,7 +27,7 @@
   align-items: center;
   position: relative;
   flex: 1;
-  @include pc-lg {
+  @include pc-sm {
     justify-content: center;
     align-items: center;
   }
@@ -51,9 +51,9 @@
   font-family: var(--font-neurimbo);
   white-space: pre;
   gap: 10px;
-  padding: 2em;
+  padding: 5em 2em;
   flex: 1;
-  @include pc-lg {
+  @include pc-sm {
     width: fit-content;
   }
 }
