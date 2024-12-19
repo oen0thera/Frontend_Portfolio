@@ -1,10 +1,10 @@
-import { SkillsItemContent } from "@/type/Skills/SkillsItem.type";
+import { TechStackEnum } from "@/type/Skills/SkillsItem.type";
 
 export type ProjectsItemProps = {
   name: string;
   preview: string;
   description: string;
-  tech: SkillsItemContent;
+  tech: TechStackEnum[];
   links?: ProjectLink;
   time: string;
   type: string;
