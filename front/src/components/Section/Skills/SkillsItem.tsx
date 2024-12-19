@@ -7,6 +7,8 @@ import styles from "./SkillsItem.module.scss";
 import Chip from "@/components/Chip/Chip";
 import Item from "@/components/Item/Item";
 import { useState } from "react";
+import { ChipVariantEnum } from "@/type/Chip/Chip.type";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 
 export default function SkillsItem({ item }: { item: SkillsItemProps }) {
   const [isHover, setIsHover] = useState(false);
@@ -15,11 +17,7 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
     setIsHover(isHover);
   };
   const onClick = () => {
-    const click = () => {
-      setIsClick(false);
-    };
     setIsClick(true);
-    setTimeout(click, 60);
   };
   function getEnumKey(value: TechStackEnum): keyof typeof TechStackEnum {
     const keys = Object.entries(TechStackEnum).find(
@@ -39,16 +37,20 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
           >
             {item.content.map((element, idx) => {
               return (
-                <Chip
-                  key={idx}
-                  name={element}
-                  color={TechStackColor[getEnumKey(element)]}
-                  isDark={
-                    element === TechStackEnum.GITHUB ||
-                    element === TechStackEnum.ZUSTAND ||
-                    element === TechStackEnum.QUERY
-                  }
-                />
+                <div className={styles.content}>
+                  <Chip
+                    key={idx}
+                    name={element}
+                    color={TechStackColor[getEnumKey(element)]}
+                    isDark={
+                      element === TechStackEnum.GITHUB ||
+                      element === TechStackEnum.ZUSTAND ||
+                      element === TechStackEnum.QUERY
+                    }
+                    variant={ChipVariantEnum.SMALL}
+                  />
+                  <ProgressBar progress={70} />
+                </div>
               );
             })}
           </div>

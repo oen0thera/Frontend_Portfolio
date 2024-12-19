@@ -3,14 +3,10 @@
 .skills {
   display: flex;
   flex-direction: column;
-  border-radius: 5rem;
-  box-shadow: 0 0 0.5rem 0;
+  border-radius: 0;
+  box-shadow: none;
   background-color: white;
   padding: 2em;
-  @include mo-sm {
-    border-radius: 0;
-    box-shadow: none;
-  }
 }
 .skills_title {
   width: 100%;
