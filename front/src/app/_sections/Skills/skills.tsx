@@ -8,28 +8,28 @@ import {
 
 export default function Skills() {
   const SkillsFamiliar: SkillsItemContent = [
-    TechStackEnum.NEXT,
-    TechStackEnum.REACT,
-    TechStackEnum.HTML,
-    TechStackEnum.CSS,
-    TechStackEnum.SASS,
-    TechStackEnum.GITHUB,
-    TechStackEnum.GITHUB_ACTIONS,
-    TechStackEnum.JAVASCRIPT,
-    TechStackEnum.TYPESCRIPT,
-    TechStackEnum.ZUSTAND,
+    { tech: TechStackEnum.NEXT, acquaint: 80 },
+    { tech: TechStackEnum.REACT, acquaint: 70 },
+    { tech: TechStackEnum.HTML, acquaint: 75 },
+    { tech: TechStackEnum.CSS, acquaint: 70 },
+    { tech: TechStackEnum.SASS, acquaint: 60 },
+    { tech: TechStackEnum.GITHUB, acquaint: 65 },
+    { tech: TechStackEnum.GITHUB_ACTIONS, acquaint: 60 },
+    { tech: TechStackEnum.JAVASCRIPT, acquaint: 65 },
+    { tech: TechStackEnum.TYPESCRIPT, acquaint: 70 },
+    { tech: TechStackEnum.ZUSTAND, acquaint: 60 },
   ];
   const SkillsExperienced: SkillsItemContent = [
-    TechStackEnum.C_S,
-    TechStackEnum.JENKINS,
-    TechStackEnum.MYSQL,
-    TechStackEnum.QUERY,
-    TechStackEnum.REDUX,
-    TechStackEnum.STYLED_COMPONENTS,
-    TechStackEnum.TAILWIND,
-    TechStackEnum.UNITY,
-    TechStackEnum.VERCEL,
-    TechStackEnum.WEBGL,
+    { tech: TechStackEnum.C_S, acquaint: 30 },
+    { tech: TechStackEnum.JENKINS, acquaint: 20 },
+    { tech: TechStackEnum.MYSQL, acquaint: 20 },
+    { tech: TechStackEnum.QUERY, acquaint: 15 },
+    { tech: TechStackEnum.REDUX, acquaint: 30 },
+    { tech: TechStackEnum.STYLED_COMPONENTS, acquaint: 40 },
+    { tech: TechStackEnum.TAILWIND, acquaint: 25 },
+    { tech: TechStackEnum.UNITY, acquaint: 30 },
+    { tech: TechStackEnum.VERCEL, acquaint: 30 },
+    { tech: TechStackEnum.WEBGL, acquaint: 25 },
   ];
 
   return (

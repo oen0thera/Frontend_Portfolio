@@ -3,7 +3,8 @@ export type SkillsItemProps = {
   type: SkillsItemType;
 };
 
-export type SkillsItemContent = TechStackEnum[];
+export type SkillsItemContent = SkillsItem[];
+export type SkillsItem = { tech: TechStackEnum; acquaint: number };
 export enum SkillsItemType {
   FAMILIAR = "FAMILIAR",
   EXPERIENCED = "EXPERIENCED",

@@ -37,19 +37,18 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
           >
             {item.content.map((element, idx) => {
               return (
-                <div className={styles.content}>
+                <div className={styles.content} key={idx}>
                   <Chip
-                    key={idx}
-                    name={element}
-                    color={TechStackColor[getEnumKey(element)]}
+                    name={element.tech}
+                    color={TechStackColor[getEnumKey(element.tech)]}
                     isDark={
-                      element === TechStackEnum.GITHUB ||
-                      element === TechStackEnum.ZUSTAND ||
-                      element === TechStackEnum.QUERY
+                      element.tech === TechStackEnum.GITHUB ||
+                      element.tech === TechStackEnum.ZUSTAND ||
+                      element.tech === TechStackEnum.QUERY
                     }
                     variant={ChipVariantEnum.SMALL}
                   />
-                  <ProgressBar progress={70} />
+                  <ProgressBar progress={element.acquaint} />
                 </div>
               );
             })}
