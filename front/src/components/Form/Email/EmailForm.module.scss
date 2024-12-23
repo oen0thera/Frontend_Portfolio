@@ -1,0 +1,64 @@
+@import "../../../styles/mixin.scss";
+
+.email_form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 2em;
+  form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+  }
+}
+.email_form_contents {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: space-between;
+}
+.email_form_row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: end;
+  max-width: 20em;
+  white-space: pre;
+  gap: 1em;
+  h2 {
+    margin: 0;
+  }
+  input {
+    width: 100%;
+    @include mo-sm {
+      font-size: 0.5em;
+    }
+  }
+  @include mo-sm {
+    font-size: 0.5em;
+  }
+}
+.email_form_text {
+  display: flex;
+  flex-grow: 1;
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+}
+
+.email_button {
+  cursor: pointer;
+}
+.email_button_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: 400;
+}
