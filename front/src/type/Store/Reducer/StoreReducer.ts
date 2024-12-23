@@ -1,4 +1,4 @@
-import { ModalContent } from "@/type/Modal/Modal.type";
+import { ModalContent, ModalType } from "@/type/Modal/Modal.type";
 import { SectionType } from "@/type/Section/Section.type";
 import { StoreAction } from "@/type/Store/Action/StoreAction";
 export type AppState = {
@@ -14,6 +14,7 @@ const initialState = {
   selectedSection: null,
   currSection: null,
   modalState: false,
+  modalType: null,
   modalContent: null,
 };
 

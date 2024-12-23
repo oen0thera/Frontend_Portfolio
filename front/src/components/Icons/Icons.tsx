@@ -11,15 +11,15 @@ import {
 
 import styles from "./Icons.module.scss";
 
-export default function Icons({ src }: IconsProps) {
+export default function Icons({ src, size }: IconsProps) {
   const Icon = {
-    FaUser: <FaUser width={10} height={10} />,
-    FaRegCalendar: <FaRegCalendar width={10} height={10} />,
-    FaHouseChimney: <FaHouseChimney width={10} height={10} />,
-    FaPhone: <FaPhone width={10} height={10} />,
-    FaRegEnvelope: <FaRegEnvelope width={10} height={10} />,
-    FaGraduationCap: <FaGraduationCap width={10} height={10} />,
-    FaGithub: <FaGithub width={10} height={10} />,
+    FaUser: <FaUser size={size ? size : 10} />,
+    FaRegCalendar: <FaRegCalendar size={size ? size : 10} />,
+    FaHouseChimney: <FaHouseChimney size={size ? size : 10} />,
+    FaPhone: <FaPhone size={size ? size : 10} />,
+    FaRegEnvelope: <FaRegEnvelope size={size ? size : 10} />,
+    FaGraduationCap: <FaGraduationCap size={size ? size : 10} />,
+    FaGithub: <FaGithub size={size ? size : 10} />,
   };
 
   return <div className={styles.icon}>{Icon[src]}</div>;

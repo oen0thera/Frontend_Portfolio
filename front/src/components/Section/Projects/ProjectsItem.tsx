@@ -10,6 +10,7 @@ import Item from "@/components/Item/Item";
 import Chip from "@/components/Chip/Chip";
 import { TechStackColor, TechStackEnum } from "@/type/Skills/SkillsItem.type";
 import { ChipVariantEnum } from "@/type/Chip/Chip.type";
+import { ModalType } from "@/type/Modal/Modal.type";
 export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
   const dispatch = useDispatcher();
   const [active, setActive] = useState(false);
@@ -31,7 +32,10 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
   const modalState = select("modalState");
   const openModal = () => {
     const setOpenModal = () => {
-      dispatch("setModalContent", projects);
+      dispatch("setModalContent", {
+        type: ModalType.TIMELINE,
+        content: projects,
+      });
       dispatch("setOpenModal", true);
     };
     setOpenModal();
