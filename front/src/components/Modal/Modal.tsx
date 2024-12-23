@@ -8,8 +8,9 @@ import { useEffect } from "react";
 import EmailForm from "@/components/Form/Email/EmailForm";
 export default function Modal() {
   const modalState = select("modalState") as boolean;
-  const modalType = select("modalType") as ModalType;
   const modalContent = select("modalContent") as ModalContent;
+  const modalType = modalContent?.type;
+
   const dispatch = useDispatcher();
   const closeModal = () => {
     dispatch("setOpenModal", false);
@@ -32,7 +33,7 @@ export default function Modal() {
         return <Timeline project={modalContent?.content} />;
       case ModalType.EMAIL:
         return (
-          <div className={styles.modal}>
+          <div className={styles.modal} onClick={modalClick}>
             <EmailForm />
           </div>
         );
@@ -45,9 +46,7 @@ export default function Modal() {
       }`}
       onClick={closeModal}
     >
-      <div className={styles.modal_wrapper} onClick={modalClick}>
-        {renderModal()}
-      </div>
+      <div className={styles.modal_wrapper}>{renderModal()}</div>
     </div>
   );
 }

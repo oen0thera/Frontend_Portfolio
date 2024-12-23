@@ -5,7 +5,6 @@ export type AppState = {
   selectedSection: SectionType | null;
   currSection: SectionType | null;
   modalState: boolean;
-  modalType: ModalType | null;
   modalContent: ModalContent | null;
 };
 
@@ -42,8 +41,7 @@ export const rootReducer = (
     case "setModalContent":
       return {
         ...state,
-        modalType: action.payload.type,
-        modalContent: action.payload.content,
+        modalContent: action.payload,
       };
     default:
       return state;
