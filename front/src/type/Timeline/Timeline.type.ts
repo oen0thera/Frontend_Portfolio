@@ -1,3 +1,5 @@
 import { ProjectsItemProps } from "@/type/Projects/ProjectsItem.type";
 
-export type TimelineProps = ProjectsItemProps[] | null;
+export type TimelineProps = {
+  initState: boolean;
+};

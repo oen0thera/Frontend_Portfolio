@@ -30,7 +30,7 @@ export default function Modal() {
   const renderModal = () => {
     switch (modalType) {
       case ModalType.TIMELINE:
-        return <Timeline project={modalContent?.content} />;
+        return <Timeline initState={false} />;
       case ModalType.EMAIL:
         return (
           <div className={styles.modal} onClick={modalClick}>
