@@ -87,6 +87,8 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
                             tech === TechStackEnum.GITHUB ||
                             tech === TechStackEnum.ZUSTAND ||
                             tech === TechStackEnum.QUERY ||
+                            tech === TechStackEnum.REDUX ||
+                            tech === TechStackEnum.C_S ||
                             tech === TechStackEnum.TYPESCRIPT
                           }
                           variant={ChipVariantEnum.SMALL}

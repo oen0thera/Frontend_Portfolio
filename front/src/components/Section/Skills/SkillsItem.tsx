@@ -45,6 +45,7 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
                       element.tech === TechStackEnum.GITHUB ||
                       element.tech === TechStackEnum.ZUSTAND ||
                       element.tech === TechStackEnum.QUERY ||
+                      element.tech === TechStackEnum.REDUX ||
                       element.tech === TechStackEnum.TYPESCRIPT
                     }
                     variant={ChipVariantEnum.SMALL}
