@@ -11,12 +11,15 @@ import styles from "./ContactItem.module.scss";
 import Icons from "@/components/Icons/Icons";
 import { IconsType } from "@/type/Icons/Icons.type";
 import { ModalType } from "@/type/Modal/Modal.type";
+import { useRouter } from "next/navigation";
 
 export default function ContactItem({ item }: { item: ContactItemProps }) {
   const dispatch = useDispatcher();
+  const router = useRouter();
   const [active, setActive] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isClick, setIsClick] = useState(false);
+
   const onHover = (isHover: boolean) => {
     setIsHover(isHover);
   };
@@ -53,7 +56,12 @@ export default function ContactItem({ item }: { item: ContactItemProps }) {
       content={
         <>
           {item.type === ContactItemType.LINK ? (
-            <div className={styles.contact_item_container}>
+            <div
+              className={styles.contact_item_container}
+              onClick={() => {
+                router.push("https://github.com/oen0thera");
+              }}
+            >
               <Icons src={IconsType.github} size={30} />
               <h2>Github</h2>
             </div>

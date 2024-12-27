@@ -104,9 +104,10 @@ export const projects: ProjectsItemProps[] = [
   },
   {
     name: "Frontend Portfolio",
-    preview: "/projects/Webbizcraft.png",
+    preview: "/projects/Portfolio.png",
     time: new Date(2024, 11).toISOString(),
-    description: "",
+    description:
+      "현재 작업중인 포트폴리오 프로젝트입니다. 상기의 기술 스택을 사용했으며, Vercel을 통해 개발(develop) 브랜치와 메인(main) 브랜치를 구분 배포 중입니다. 진행중인 프로젝트임에 따라 추가적인 변동사항이 반영될 수 있습니다.",
     tech: [
       TechStackEnum.NEXT,
       TechStackEnum.TYPESCRIPT,
