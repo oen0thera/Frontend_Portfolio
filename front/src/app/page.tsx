@@ -9,6 +9,7 @@ import select from "@/app/utils/Selector";
 import Section from "@/components/Section/Section/Section";
 import useDispatcher from "@/app/utils/Dispatcher";
 import Projects from "@/app/_sections/Projects/projects";
+import Contact from "@/app/_sections/Contact/contact";
 
 export default function Home() {
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -108,7 +109,7 @@ export default function Home() {
       {
         <>
           <Section
-            sections={[<About />, <Skills />, <Projects />]}
+            sections={[<About />, <Skills />, <Projects />, <Contact />]}
             intersectingSections={intersectingSection}
             sectionRefs={sectionRefs}
           />

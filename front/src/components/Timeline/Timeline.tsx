@@ -4,24 +4,33 @@ import styles from "./Timeline.module.scss";
 import { TimelineProps } from "@/type/Timeline/Timeline.type";
 import { ImInsertTemplate } from "react-icons/im";
 import { projects } from "@/constants/contants.type";
+import select from "@/app/utils/Selector";
 
-export default function Timeline({ project }: { project: TimelineProps }) {
-  const [separate, setSeparate] = useState(false);
-  const [growBranches, setGrowBranches] = useState(false);
+export default function Timeline({ initState }: TimelineProps) {
+  const [separate, setSeparate] = useState(initState);
+  const [growBranches, setGrowBranches] = useState(initState);
+  const modalState = select("modalState");
+  useEffect(() => {}, [separate]);
   useEffect(() => {
-    const sepTime = () => {
-      setSeparate(true);
-    };
-
-    setTimeout(sepTime, 1000);
-  }, []);
-  useEffect(() => {
-    const growBranches = () => {
-      setGrowBranches(true);
-    };
-    setTimeout(growBranches, 2000);
-    console.log(growBranches);
-  }, [separate]);
+    if (!modalState) {
+      setSeparate(initState);
+      setGrowBranches(initState);
+    } else {
+      const sepTime = () => {
+        setSeparate(true);
+      };
+      const growBranches = () => {
+        setGrowBranches(true);
+      };
+      const sepTimer = setTimeout(sepTime, 800);
+      const growTimer = setTimeout(growBranches, 2000);
+      return () => {
+        clearTimeout(sepTimer);
+        clearTimeout(growTimer);
+      };
+    }
+    console.log(separate, growBranches);
+  }, [modalState]);
 
   const convertDate = (date: Date) => {
     return date.getMonth() < 1

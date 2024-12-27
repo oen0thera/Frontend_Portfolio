@@ -1,5 +1,6 @@
 export type IconsProps = {
   src: IconsType;
+  size?: number;
 };
 
 export enum IconsType {
