@@ -1,3 +1,5 @@
+@import "../../styles/mixin.scss";
+
 .timeline_container {
   display: flex;
   flex-direction: column;
@@ -56,9 +58,20 @@
     visibility: visible;
     animation: grow_left 1s cubic-bezier(0.39, 0.575, 0.565, 1);
     width: 400px;
+    @include mo-sm {
+      width: 200px;
+      animation: grow_left_sm 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
     .branch_content {
       opacity: 1;
       animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+      @include mo-sm {
+        display: flex;
+        align-items: center;
+        font-size: 0.7rem;
+        white-space: pre;
+        overflow: hidden;
+      }
     }
   }
   .time {
@@ -91,9 +104,21 @@
     animation: grow_right 1s cubic-bezier(0.39, 0.575, 0.565, 1);
     width: 400px;
     transform: translateX(-400px);
+    @include mo-sm {
+      width: 200px;
+      transform: translateX(-200px);
+      animation: grow_right_sm 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
     .branch_content {
       opacity: 1;
       animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+      @include mo-sm {
+        display: flex;
+        align-items: center;
+        font-size: 0.7rem;
+        white-space: pre;
+        overflow: hidden;
+      }
     }
   }
   .time {
@@ -145,6 +170,14 @@
     width: 400px;
   }
 }
+@keyframes grow_left_sm {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 200px;
+  }
+}
 @keyframes grow_right {
   0% {
     width: 0;
@@ -153,6 +186,20 @@
   100% {
     width: 400px;
     transform: translateX(-400px);
+    @include mo-sm {
+      width: 200px;
+      transform: translateX(-200px);
+    }
+  }
+}
+@keyframes grow_right_sm {
+  0% {
+    width: 0;
+    transform: translateX(0);
+  }
+  100% {
+    width: 200px;
+    transform: translateX(-200px);
   }
 }
 @keyframes zoom_in {
