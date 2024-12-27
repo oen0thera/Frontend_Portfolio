@@ -44,6 +44,12 @@
     list-style: none;
     font-size: 1em;
     gap: 1em;
+
+    @include mo-sm {
+      margin: 0;
+      width: 100%;
+    }
+
     li {
       &.nav {
         cursor: pointer;

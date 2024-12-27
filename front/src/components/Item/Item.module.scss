@@ -27,6 +27,9 @@
       animation: container-click 0.6s;
     }
   }
+  @include mo-sm {
+    padding: 3em;
+  }
 }
 .item_subtitle {
   display: flex;

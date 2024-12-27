@@ -44,7 +44,8 @@ export default function SkillsItem({ item }: { item: SkillsItemProps }) {
                     isDark={
                       element.tech === TechStackEnum.GITHUB ||
                       element.tech === TechStackEnum.ZUSTAND ||
-                      element.tech === TechStackEnum.QUERY
+                      element.tech === TechStackEnum.QUERY ||
+                      element.tech === TechStackEnum.TYPESCRIPT
                     }
                     variant={ChipVariantEnum.SMALL}
                   />
