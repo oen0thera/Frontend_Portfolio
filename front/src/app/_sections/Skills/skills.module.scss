@@ -7,6 +7,9 @@
   box-shadow: none;
   background-color: white;
   padding: 2em;
+  @include mo-sm {
+    padding: 0.5em;
+  }
 }
 .skills_title {
   width: 100%;
