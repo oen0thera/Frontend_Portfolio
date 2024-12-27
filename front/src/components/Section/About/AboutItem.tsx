@@ -49,8 +49,6 @@ export default function AboutItem({ item }: { item: AboutItemProps }) {
                         alt="profile_image"
                         style={{
                           objectFit: "cover",
-
-                          transform: "scale(1.2) ",
                         }}
                       />
                     )}

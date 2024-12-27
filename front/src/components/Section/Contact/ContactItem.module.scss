@@ -1,0 +1,10 @@
+.contact_item_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  h2 {
+    margin: 0;
+  }
+}

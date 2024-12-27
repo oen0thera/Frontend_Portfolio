@@ -1,3 +1,5 @@
+@import "../../styles/mixin.scss";
+
 .GNB {
   width: 100%;
   max-width: 100vw;
@@ -12,7 +14,11 @@
   background-color: white;
   align-content: center;
   position: fixed;
+  font-family: var(--font-neurimbo);
   z-index: 10;
+  @include mo-sm {
+    justify-content: center;
+  }
 }
 .GNB_title {
   display: flex;
@@ -30,6 +36,9 @@
     color: rgba(0, 0, 0, 0.4);
     margin: 0;
   }
+  @include mo-sm {
+    display: none;
+  }
 }
 .nav_container {
   display: flex;
@@ -37,6 +46,9 @@
   align-items: center;
   font-family: var(--font-neurimbo);
   font-weight: 500;
+  @include mo-sm {
+    width: 100%;
+  }
   ul {
     display: flex;
     flex-direction: row;
@@ -44,18 +56,21 @@
     list-style: none;
     font-size: 1em;
     gap: 1em;
-
     @include mo-sm {
       margin: 0;
       width: 100%;
     }
-
     li {
       &.nav {
         cursor: pointer;
         &.active {
           font-weight: bold;
         }
+      }
+      @include mo-sm {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
       }
     }
   }

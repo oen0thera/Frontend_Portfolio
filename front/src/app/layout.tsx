@@ -16,8 +16,12 @@ export const metadata: Metadata = {
 
 const neurimbo = localFont({
   src: "../../public/fonts/neurimboGothicRegular.otf",
-  display: "swap",
   variable: "--font-neurimbo",
+});
+
+const pretendard = localFont({
+  src: "../../public/fonts/Pretendard-Regular.otf",
+  variable: "--font-pretendard",
 });
 
 export default function RootLayout({
@@ -28,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className={neurimbo.className}>
+        <main className={`${neurimbo.variable} ${pretendard.variable}`}>
           <StoreProvider>
             <Modal />
             <GNB />
