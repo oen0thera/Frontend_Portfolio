@@ -5,10 +5,10 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  &:hover {
-    animation: zoom_in 1s ease-in;
-    transform: scale(2) translate(-20vw, 10vh);
-  }
+  // &:hover {
+  //   animation: zoom_in 1s ease-in;
+  //   transform: scale(2) translate(-20vw, 10vh);
+  // }
 }
 .timeline_head {
   width: 1rem;
