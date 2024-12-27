@@ -86,7 +86,8 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
                           isDark={
                             tech === TechStackEnum.GITHUB ||
                             tech === TechStackEnum.ZUSTAND ||
-                            tech === TechStackEnum.QUERY
+                            tech === TechStackEnum.QUERY ||
+                            tech === TechStackEnum.TYPESCRIPT
                           }
                           variant={ChipVariantEnum.SMALL}
                         />

@@ -1,3 +1,5 @@
+@import "../../styles/mixin.scss";
+
 .progressBar_wrapper {
   display: flex;
   flex-grow: 1;
@@ -17,4 +19,7 @@
   border-radius: 0px 10px 10px 0px;
   color: white;
   transition: width 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @include mo-sm {
+    font-size: 10px;
+  }
 }
