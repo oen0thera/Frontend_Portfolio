@@ -45,6 +45,7 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
     const keys = Object.entries(TechStackEnum).find(
       ([_, val]) => val === value
     );
+    console.log(keys);
     return keys?.[0] as keyof typeof TechStackEnum;
   }
 
@@ -86,7 +87,11 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
                           isDark={
                             tech === TechStackEnum.GITHUB ||
                             tech === TechStackEnum.ZUSTAND ||
-                            tech === TechStackEnum.QUERY
+                            tech === TechStackEnum.QUERY ||
+                            tech === TechStackEnum.REDUX ||
+                            tech === TechStackEnum.C_S ||
+                            tech === TechStackEnum.TYPESCRIPT ||
+                            tech === TechStackEnum.LANGCHAIN
                           }
                           variant={ChipVariantEnum.SMALL}
                         />
