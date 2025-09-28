@@ -18,6 +18,12 @@ export default function Skills() {
     { tech: TechStackEnum.JAVASCRIPT, acquaint: 65 },
     { tech: TechStackEnum.TYPESCRIPT, acquaint: 70 },
     { tech: TechStackEnum.ZUSTAND, acquaint: 60 },
+    { tech: TechStackEnum.JENKINS, acquaint: 60 },
+    { tech: TechStackEnum.SPRING, acquaint: 40 },
+    { tech: TechStackEnum.JAVA, acquaint: 60 },
+    { tech: TechStackEnum.FASTAPI, acquaint: 50 },
+    { tech: TechStackEnum.PYTHON, acquaint: 65 },
+    { tech: TechStackEnum.ORACLE, acquaint: 40 },
   ];
   const SkillsExperienced: SkillsItemContent = [
     { tech: TechStackEnum.C_S, acquaint: 30 },
@@ -30,6 +36,15 @@ export default function Skills() {
     { tech: TechStackEnum.UNITY, acquaint: 30 },
     { tech: TechStackEnum.VERCEL, acquaint: 30 },
     { tech: TechStackEnum.WEBGL, acquaint: 25 },
+    { tech: TechStackEnum.DOCKER, acquaint: 30 },
+    { tech: TechStackEnum.OCI, acquaint: 20 },
+    { tech: TechStackEnum.NGINX, acquaint: 40 },
+    { tech: TechStackEnum.SURICATA, acquaint: 30 },
+    { tech: TechStackEnum.LINUX, acquaint: 35 },
+    { tech: TechStackEnum.OLLAMA, acquaint: 25 },
+    { tech: TechStackEnum.LANGCHAIN, acquaint: 15 },
+    { tech: TechStackEnum.SCIKIT_LEARN, acquaint: 20 },
+    
   ];
 
   return (

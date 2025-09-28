@@ -117,6 +117,29 @@ export const projects: ProjectsItemProps[] = [
     ],
     type: "important",
   },
+  {
+    name: "MOG(My Own Gym)",
+    preview: "/projects/MOG.png",
+    time: new Date(2025, 9).toISOString(),
+    description: "사용자 맞춤 운동 스케줄러 서비스입니다. 상기의 기술 스택을 사용했으며, 프론트엔드는 Vercel로 배포, 백엔드는 OCI로 구축 후 배포했습니다. 현재는 OCI 백엔드가 비활성화된 상태입니다.",
+    tech: [
+      TechStackEnum.REACT,
+      TechStackEnum.JAVASCRIPT,
+      TechStackEnum.CSS,
+      TechStackEnum.VERCEL,
+      TechStackEnum.GITHUB,
+      TechStackEnum.GITHUB_ACTIONS,
+      TechStackEnum.JAVA,
+      TechStackEnum.SPRING,
+      TechStackEnum.ORACLE,
+      TechStackEnum.DOCKER,
+      TechStackEnum.OCI,
+      TechStackEnum.NGINX,
+      TechStackEnum.LINUX,
+      
+    ],
+    type: "important",
+  }
 ];
 
 const ProjectName: Record<string, string> = {
@@ -126,6 +149,7 @@ const ProjectName: Record<string, string> = {
   Webbizcraft: "Webbizcraft (웹비즈크래프트)",
   Commonplus: "Commonplus (커먼플러스)",
   Bemo: "배움의 모든것",
+  "Frontend Portfolio": "Frontend Portfolio",
 };
 
 export const getProjectName = (key: string): string => ProjectName[key];
