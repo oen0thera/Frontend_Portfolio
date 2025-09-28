@@ -27,12 +27,18 @@
       animation: container-click 0.6s;
     }
   }
+  @include mo-sm {
+    padding: 2em 1em;
+  }
 }
 .item_subtitle {
   display: flex;
   flex-grow: 0.5;
   align-items: center;
   justify-content: center;
+  @include mo-sm {
+    font-size: 1.5em;
+  }
 }
 @keyframes text-pop-up-top {
   0% {
