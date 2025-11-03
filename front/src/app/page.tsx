@@ -10,6 +10,7 @@ import Section from "@/components/Section/Section/Section";
 import useDispatcher from "@/app/utils/Dispatcher";
 import Projects from "@/app/_sections/Projects/projects";
 import Contact from "@/app/_sections/Contact/contact";
+import { ResponsiveType } from "@/type/Responsive/Responsive.type";
 
 export default function Home() {
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -37,6 +38,35 @@ export default function Home() {
       window.removeEventListener("scroll", getScrollY);
     };
   }, []);
+
+  //   $breakpoint-xl: 1920px;
+  // $breakpoint-lg: 1680px;
+  // $breakpoint-sm: 1023px;
+  // $breakpoint-m-md: 767px;
+  // $breakpoint-m-sm: 600px;
+  useEffect(() => {
+    console.log(window.innerWidth);
+    switch (true) {
+      case window.innerWidth > 1920:
+        dispatch("setCurrentWidthType", "PC-XL" as ResponsiveType);
+        break;
+      case window.innerWidth > 1680:
+        dispatch("setCurrentWidthType", "PC-LG" as ResponsiveType);
+        break;
+      case window.innerWidth > 1023:
+        dispatch("setCurrentWidthType", "PC-SM" as ResponsiveType);
+        break;
+      case window.innerWidth > 767:
+        dispatch("setCurrentWidthType", "MO-MD" as ResponsiveType);
+        break;
+      case window.innerWidth > 600:
+        dispatch("setCurrentWidthType", "MO-SM" as ResponsiveType);
+        break;
+      default:
+        dispatch("setCurrentWidthType", "MO-SM" as ResponsiveType);
+        break;
+    }
+  }, [window.innerWidth]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

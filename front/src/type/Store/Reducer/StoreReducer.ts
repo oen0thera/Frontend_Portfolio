@@ -1,4 +1,5 @@
 import { ModalContent, ModalType } from "@/type/Modal/Modal.type";
+import { ResponsiveType } from "@/type/Responsive/Responsive.type";
 import { SectionType } from "@/type/Section/Section.type";
 import { StoreAction } from "@/type/Store/Action/StoreAction";
 export type AppState = {
@@ -6,6 +7,7 @@ export type AppState = {
   currSection: SectionType | null;
   modalState: boolean;
   modalContent: ModalContent | null;
+  currentWidthType: ResponsiveType | null;
 };
 
 export type StateKey = keyof AppState;
@@ -16,6 +18,7 @@ const initialState = {
   modalState: false,
   modalType: null,
   modalContent: null,
+  currentWidthType: null,
 };
 
 export const rootReducer = (
@@ -42,6 +45,12 @@ export const rootReducer = (
       return {
         ...state,
         modalContent: action.payload,
+      };
+    case "setCurrentWidthType":
+      console.log(action.payload);
+      return {
+        ...state,
+        currentWidthType: action.payload,
       };
     default:
       return state;
