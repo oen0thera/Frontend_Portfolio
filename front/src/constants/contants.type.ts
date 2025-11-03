@@ -76,7 +76,6 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.GITHUB,
     ],
     links: {
-      repository: "https://github.com/oen0thera/Commonplus_Only_Readme",
       production: "https://commonplus.store/",
     },
     type: "important",
@@ -96,10 +95,7 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.GITHUB,
       TechStackEnum.GITHUB_ACTIONS,
     ],
-    links: {
-      repository: "https://github.com/oen0thera/Bemo_Frontend_Only_Readme",
-      production: "https://front.bemo.pe.kr/",
-    },
+    links: {},
     type: "important",
   },
   {
@@ -121,7 +117,8 @@ export const projects: ProjectsItemProps[] = [
     name: "MOG(My Own Gym)",
     preview: "/projects/MOG.png",
     time: new Date(2025, 9).toISOString(),
-    description: "사용자 맞춤 운동 스케줄러 서비스입니다. 상기의 기술 스택을 사용했으며, 프론트엔드는 Vercel로 배포, 백엔드는 OCI로 구축 후 배포했습니다. 현재는 OCI 백엔드가 비활성화된 상태입니다.",
+    description:
+      "사용자 맞춤 운동 스케줄러 서비스입니다. 상기의 기술 스택을 사용했으며, 프론트엔드는 Vercel로 배포, 백엔드는 OCI로 구축 후 배포했습니다. 현재는 OCI 백엔드가 비활성화된 상태입니다.",
     tech: [
       TechStackEnum.REACT,
       TechStackEnum.JAVASCRIPT,
@@ -136,10 +133,42 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.OCI,
       TechStackEnum.NGINX,
       TechStackEnum.LINUX,
-      
+      TechStackEnum.PYTHON,
+      TechStackEnum.FASTAPI,
     ],
     type: "important",
-  }
+    links:{
+      repository:"https://github.com/MOG-My-Own-Gym",
+      portfolio:"https://drive.google.com/file/d/1lAiIfDus2d9ssWijAQjKEVd8rnnNWyE-/view"
+    }
+  },
+  {
+    name: "Dadum(다듬)",
+    preview: "/projects/Dadum.png",
+    time: new Date(2025, 11).toISOString(),
+    description:
+      "AI 기반 운동 분석 및 루틴 관리 서비스입니다. 상기의 기술 스택을 사용했으며, Suricata로 IDS를 구성, nginx로 프록시를 구축한 후 Ollama의 Gemma3:1b-it-qat 로그분석을 통해 XDR 및 SOAR를 소프트웨어적으로 구현했습니다. 또한 사용자를 위한 루틴 서비스, 운동 통계와 함께 건강 이슈외 오프토픽이 적용된 Dadum-챗봇이 구현됐으며, YOLO, ResNet50, CLIP 등을 통한 실시간 자세 분석 및 식단 분석, Kotlin을 통한 모바일 중계 앱 구현 및 워치 내 Health Connect 연동, Isolation Forest를 활용한 이상거래 탐지 시스템, Google tag manager와 Google Analytics를 통한 실시간 페이지 통계를 비롯하여 Firebase 연동을 통한 웹푸시, VM 내 Docker로 구성된 인증서버 - 패스워드리스 로그인을 통한 인증 로직 강화등을 구현했습니다.",
+    tech: [
+      TechStackEnum.REACT,
+      TechStackEnum.JAVASCRIPT,
+      TechStackEnum.CSS,
+      TechStackEnum.GITHUB,
+      TechStackEnum.JAVA,
+      TechStackEnum.SPRING,
+      TechStackEnum.ORACLE,
+      TechStackEnum.DOCKER,
+      TechStackEnum.PYTHON,
+      TechStackEnum.FASTAPI,
+      TechStackEnum.OLLAMA,
+      TechStackEnum.SURICATA,
+      TechStackEnum.SCIKIT_LEARN,
+    ],
+    type: "important",
+    links:{
+      repository:"https://github.com/Dadum-Health-Care-Service",
+      portfolio:"https://drive.google.com/file/d/1yMBy1yGc5Q1YdaA0ns9WAFgeoZOj7gl0/view"
+    }
+  },
 ];
 
 const ProjectName: Record<string, string> = {
@@ -150,6 +179,8 @@ const ProjectName: Record<string, string> = {
   Commonplus: "Commonplus (커먼플러스)",
   Bemo: "배움의 모든것",
   "Frontend Portfolio": "Frontend Portfolio",
+  MOG: "MOG (My Own Gym)",
+  Dadum: "Dadum (다듬)",
 };
 
 export const getProjectName = (key: string): string => ProjectName[key];

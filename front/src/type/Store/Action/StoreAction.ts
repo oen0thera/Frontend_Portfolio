@@ -1,4 +1,5 @@
 import { ModalContent } from "@/type/Modal/Modal.type";
+import { ResponsiveType } from "@/type/Responsive/Responsive.type";
 import { SectionType } from "@/type/Section/Section.type";
 
 export type SetScrollAction = {
@@ -21,6 +22,11 @@ export type SetModalContent = {
   payload: ModalContent;
 };
 
+export type SetCurrentWidthType = {
+  type: "setCurrentWidthType";
+  payload: ResponsiveType;
+};
+
 export const setScroll = (value: SectionType): SetScrollAction => ({
   type: "setScroll",
   payload: value,
@@ -41,11 +47,19 @@ export const setModalContent = (value: ModalContent): SetModalContent => ({
   payload: value,
 });
 
+export const setResponsiveType = (
+  value: ResponsiveType
+): SetCurrentWidthType => ({
+  type: "setCurrentWidthType",
+  payload: value,
+});
+
 type ActionListType = {
   setScroll: typeof setScroll;
   setCurrSection: typeof setCurrSection;
   setOpenModal: typeof setOpenModal;
   setModalContent: typeof setModalContent;
+  setCurrentWidthType: typeof setResponsiveType;
 };
 
 export const ActionList: ActionListType = {
@@ -53,6 +67,7 @@ export const ActionList: ActionListType = {
   setCurrSection: setCurrSection,
   setOpenModal: setOpenModal,
   setModalContent: setModalContent,
+  setCurrentWidthType: setResponsiveType,
 };
 
 export type ActionKey = keyof typeof ActionList;
@@ -64,4 +79,5 @@ export type StoreAction =
   | SetScrollAction
   | SetCurrSectionAction
   | SetOpenModal
-  | SetModalContent;
+  | SetModalContent
+  | SetCurrentWidthType;
