@@ -45,7 +45,6 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
     const keys = Object.entries(TechStackEnum).find(
       ([_, val]) => val === value
     );
-    console.log(keys);
     return keys?.[0] as keyof typeof TechStackEnum;
   }
 
@@ -109,7 +108,11 @@ export default function ProjectsItem({ item }: { item: ProjectsItemProps }) {
                         return (
                           <div key={idx}>
                             {`${
-                              key === "repository" ? "레포지토리" : "배포 링크"
+                              key === "repository"
+                                ? "레포지토리"
+                                : key === "production"
+                                ? "배포 링크"
+                                : "포트폴리오"
                             } : `}
                             <a href={value} onClick={onLink}>
                               {value}

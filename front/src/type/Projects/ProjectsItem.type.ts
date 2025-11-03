@@ -13,4 +13,5 @@ export type ProjectsItemProps = {
 export type ProjectLink = {
   repository?: string;
   production?: string;
+  portfolio?: string;
 };
