@@ -137,10 +137,11 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.FASTAPI,
     ],
     type: "important",
-    links:{
-      repository:"https://github.com/MOG-My-Own-Gym",
-      portfolio:"https://drive.google.com/file/d/1lAiIfDus2d9ssWijAQjKEVd8rnnNWyE-/view"
-    }
+    links: {
+      repository: "https://github.com/MOG-My-Own-Gym",
+      portfolio:
+        "https://drive.google.com/file/d/1lAiIfDus2d9ssWijAQjKEVd8rnnNWyE-/view",
+    },
   },
   {
     name: "Dadum(다듬)",
@@ -164,10 +165,11 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.SCIKIT_LEARN,
     ],
     type: "important",
-    links:{
-      repository:"https://github.com/Dadum-Health-Care-Service",
-      portfolio:"https://drive.google.com/file/d/1yMBy1yGc5Q1YdaA0ns9WAFgeoZOj7gl0/view"
-    }
+    links: {
+      repository: "https://github.com/Dadum-Health-Care-Service",
+      portfolio:
+        "https://drive.google.com/file/d/13YuFvXAaR2Vxzy50jtMZMEa-15-Q-bui/view",
+    },
   },
 ];
 
