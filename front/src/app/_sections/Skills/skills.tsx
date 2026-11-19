@@ -1,5 +1,7 @@
+"use client";
 import SkillsItem from "@/components/Section/Skills/SkillsItem";
 import styles from "./skills.module.scss";
+import sectionStyles from "@/components/Section/Section/section.module.scss";
 import {
   SkillsItemContent,
   SkillsItemType,
@@ -44,27 +46,30 @@ export default function Skills() {
     { tech: TechStackEnum.OLLAMA, acquaint: 25 },
     { tech: TechStackEnum.LANGCHAIN, acquaint: 15 },
     { tech: TechStackEnum.SCIKIT_LEARN, acquaint: 20 },
-    
   ];
 
   return (
     <div className={styles.skills}>
       <div className={styles.skills_title}>
         <div className={styles.title_container}>
-          <h1>Skills</h1>
+          <h1 className={sectionStyles.reveal}>Skills</h1>
         </div>
       </div>
 
       <div className={styles.skills_container}>
-        <SkillsItem
-          item={{ type: SkillsItemType.FAMILIAR, content: SkillsFamiliar }}
-        />
-        <SkillsItem
-          item={{
-            type: SkillsItemType.EXPERIENCED,
-            content: SkillsExperienced,
-          }}
-        />
+        <div className={sectionStyles.reveal}>
+          <SkillsItem
+            item={{ type: SkillsItemType.FAMILIAR, content: SkillsFamiliar }}
+          />
+        </div>
+        <div className={sectionStyles.reveal}>
+          <SkillsItem
+            item={{
+              type: SkillsItemType.EXPERIENCED,
+              content: SkillsExperienced,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

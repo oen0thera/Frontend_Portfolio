@@ -5,12 +5,13 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  padding-top: 8.5em;
   gap: 0;
   position: relative;
   z-index: 1;
   font-family: var(--font-neurimbo);
 
-  @include mo-md {
-    width: 100%;
+  @include mo-sm {
+    padding-top: 7.5em;
   }
 }

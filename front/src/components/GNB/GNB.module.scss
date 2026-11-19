@@ -5,7 +5,6 @@
   max-width: 100vw;
   height: 6em;
   padding: 2em;
-  border-bottom: #948a8a;
   box-sizing: border-box;
   box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
   display: flex;
@@ -16,39 +15,49 @@
   position: fixed;
   font-family: var(--font-neurimbo);
   z-index: 10;
+
   @include mo-sm {
     justify-content: center;
+    height: 5em;
+    padding: 1em;
   }
 }
+
 .GNB_title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: auto;
+
   h1 {
     font-family: var(--font-neurimbo);
     font-size: 1em;
     margin: 0;
   }
+
   h3 {
     font-family: var(--font-neurimbo);
     font-size: 0.8em;
     color: rgba(0, 0, 0, 0.4);
     margin: 0;
   }
+
   @include mo-sm {
     display: none;
   }
 }
+
 .nav_container {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-neurimbo);
   font-weight: 500;
+
   @include mo-sm {
     width: 100%;
   }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -56,18 +65,30 @@
     list-style: none;
     font-size: 1em;
     gap: 1em;
+    margin: 0;
+    padding: 0;
+
     @include mo-sm {
-      margin: 0;
-      padding: 0;
       width: 100%;
+      justify-content: space-between;
     }
+
     li {
       &.nav {
         cursor: pointer;
+        transition: opacity 0.2s ease;
+
         &.active {
           font-weight: bold;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+
+        &:hover {
+          opacity: 0.6;
         }
       }
+
       @include mo-sm {
         flex-grow: 1;
         display: flex;
@@ -75,4 +96,49 @@
       }
     }
   }
+}
+
+.info_bar {
+  position: fixed;
+  top: 6em;
+  left: 0;
+  width: 100%;
+  height: 2.5em;
+  padding: 0 2em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  color: white;
+  font-family: var(--font-pretendard);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  z-index: 9;
+  transition: background-color 0.4s ease;
+
+  @include mo-sm {
+    top: 5em;
+    padding: 0 1em;
+  }
+}
+
+.info_left,
+.info_center,
+.info_right {
+  display: flex;
+  align-items: center;
+}
+
+.info_section {
+  b {
+    margin-right: 0.5em;
+    opacity: 0.6;
+  }
+}
+
+.info_center {
+  text-transform: uppercase;
+  font-weight: 600;
 }
