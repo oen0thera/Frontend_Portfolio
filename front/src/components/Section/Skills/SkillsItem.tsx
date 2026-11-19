@@ -1,66 +1,50 @@
 import {
   SkillsItemProps,
-  TechStackColor,
-  TechStackEnum,
+  SkillsItemType,
 } from "@/type/Skills/SkillsItem.type";
 import styles from "./SkillsItem.module.scss";
-import Chip from "@/components/Chip/Chip";
-import Item from "@/components/Item/Item";
-import { useState } from "react";
-import { ChipVariantEnum } from "@/type/Chip/Chip.type";
-import ProgressBar from "@/components/ProgressBar/ProgressBar";
+import { useEffect, useState } from "react";
+import select from "@/app/utils/Selector";
 
 export default function SkillsItem({ item }: { item: SkillsItemProps }) {
-  const [isHover, setIsHover] = useState(false);
-  const [isClick, setIsClick] = useState(false);
-  const onHover = (isHover: boolean) => {
-    setIsHover(isHover);
-  };
-  const onClick = () => {
-    setIsClick(true);
-  };
-  function getEnumKey(value: TechStackEnum): keyof typeof TechStackEnum {
-    const keys = Object.entries(TechStackEnum).find(
-      ([_, val]) => val === value
-    );
-    return keys?.[0] as keyof typeof TechStackEnum;
-  }
+  const currSection = select("currSection");
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    if (currSection === "Skills" && !animated) {
+      setAnimated(true);
+    }
+  }, [currSection, animated]);
+
+  const isFamiliar = item.type === SkillsItemType.FAMILIAR;
+
   return (
-    <Item
-      subtitle={item.type}
-      content={
-        <div className={styles.chip_wrapper}>
-          <div
-            className={`${styles.chip_container} ${
-              isHover ? (isClick ? styles.click : styles.hover) : styles.leave
-            }`}
-          >
-            {item.content.map((element, idx) => {
-              return (
-                <div className={styles.content} key={idx}>
-                  <Chip
-                    name={element.tech}
-                    color={TechStackColor[getEnumKey(element.tech)]}
-                    isDark={
-                      element.tech === TechStackEnum.GITHUB ||
-                      element.tech === TechStackEnum.ZUSTAND ||
-                      element.tech === TechStackEnum.QUERY ||
-                      element.tech === TechStackEnum.REDUX ||
-                      element.tech === TechStackEnum.C_S ||
-                      element.tech === TechStackEnum.TYPESCRIPT ||
-                      element.tech === TechStackEnum.LANGCHAIN
-                    }
-                    variant={ChipVariantEnum.SMALL}
-                  />
-                  <ProgressBar progress={element.acquaint} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      }
-      onHover={onHover}
-      onClick={onClick}
-    />
+    <div className={styles.skills_group}>
+      <h4
+        className={`${styles.group_title} ${
+          isFamiliar ? styles.familiar : styles.experienced
+        }`}
+      >
+        {isFamiliar ? "FAMILIAR" : "EXPERIENCED"}
+      </h4>
+      <div className={styles.skills_list}>
+        {item.content.map((element, idx) => {
+          return (
+            <div className={styles.skill_row} key={idx}>
+              <span className={styles.skill_name}>{element.tech}</span>
+              <div className={styles.progress_track}>
+                <div
+                  className={`${styles.progress_fill} ${
+                    isFamiliar ? styles.fill_familiar : styles.fill_experienced
+                  }`}
+                  style={{ width: animated ? `${element.acquaint}%` : "0%" }}
+                />
+              </div>
+              <span className={styles.skill_percent}>{element.acquaint}%</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

@@ -3,6 +3,7 @@
 # dependencies
 /front/node_modules
 /webgl
+/wiki
 /.pnp
 .pnp.*
 .yarn/*

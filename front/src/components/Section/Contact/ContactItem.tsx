@@ -1,79 +1,45 @@
+"use client";
 import useDispatcher from "@/app/utils/Dispatcher";
-import select from "@/app/utils/Selector";
-import Item from "@/components/Item/Item";
-import {
-  ContactItemProps,
-  ContactItemType,
-} from "@/type/Contact/ContactItem.type";
-import { useEffect, useState } from "react";
-
 import styles from "./ContactItem.module.scss";
 import Icons from "@/components/Icons/Icons";
 import { IconsType } from "@/type/Icons/Icons.type";
 import { ModalType } from "@/type/Modal/Modal.type";
 import { useRouter } from "next/navigation";
 
-export default function ContactItem({ item }: { item: ContactItemProps }) {
+interface ContactItemProps {
+  type: "github" | "email";
+}
+
+export default function ContactItem({ type }: ContactItemProps) {
   const dispatch = useDispatcher();
   const router = useRouter();
-  const [active, setActive] = useState(false);
-  const [isHover, setIsHover] = useState(false);
-  const [isClick, setIsClick] = useState(false);
 
-  const onHover = (isHover: boolean) => {
-    setIsHover(isHover);
-  };
-  const onClick = () => {
-    const click = () => {
-      setIsClick(false);
-    };
-    setIsClick(true);
-    setTimeout(click, 60);
-  };
-  const onLink = (event: React.MouseEvent) => {
-    event.stopPropagation();
-  };
-  const modalState = select("modalState");
   const openModal = () => {
     dispatch("setModalContent", {
       type: ModalType.EMAIL,
       content: null,
     });
-    const setOpenModal = () => {
-      dispatch("setOpenModal", true);
-    };
-    setOpenModal();
-    setActive(true);
+    dispatch("setOpenModal", true);
   };
-  useEffect(() => {
-    if (!modalState) {
-      setActive(false);
-    }
-  }, [modalState]);
+
+  if (type === "github") {
+    return (
+      <button
+        className={styles.contact_button}
+        onClick={() => router.push("https://github.com/oen0thera")}
+      >
+        <Icons src={IconsType.github} size={28} />
+        <span className={styles.contact_label}>Github</span>
+        <span className={styles.contact_meta}>github.com/oen0thera</span>
+      </button>
+    );
+  }
+
   return (
-    <Item
-      subtitle={item.type === ContactItemType.LINK ? "Links" : "Contact"}
-      content={
-        <>
-          {item.type === ContactItemType.LINK ? (
-            <div
-              className={styles.contact_item_container}
-              onClick={() => {
-                router.push("https://github.com/oen0thera");
-              }}
-            >
-              <Icons src={IconsType.github} size={30} />
-              <h2>Github</h2>
-            </div>
-          ) : (
-            <div className={styles.contact_item_container} onClick={openModal}>
-              <Icons src={IconsType.email} size={30} />
-              <h2>Email</h2>
-            </div>
-          )}
-        </>
-      }
-      onHover={onHover}
-    />
+    <button className={styles.contact_button} onClick={openModal}>
+      <Icons src={IconsType.email} size={28} />
+      <span className={styles.contact_label}>Email</span>
+      <span className={styles.contact_meta}>wjsj1015@naver.com</span>
+    </button>
   );
 }
