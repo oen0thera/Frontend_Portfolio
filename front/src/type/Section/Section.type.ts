@@ -1,6 +1,6 @@
 import { RefObject } from "react";
 
-export const SectionList = ["About", "Skills", "Projects", "Contact"] as const;
+export const SectionList = ["About", "Skills", "Career", "Projects", "Contact"] as const;
 export type SectionType = (typeof SectionList)[number];
 
 export type SectionProps = {
