@@ -7,12 +7,13 @@ import useDispatcher from "@/app/utils/Dispatcher";
 const sectionMeta: Record<SectionType, { no: string; label: string }> = {
   About: { no: "01", label: "Hello" },
   Skills: { no: "02", label: "Capabilities" },
-  Projects: { no: "03", label: "Works" },
-  Contact: { no: "04", label: "Get in touch" },
+  Career: { no: "03", label: "Experience" },
+  Projects: { no: "04", label: "Works" },
+  Contact: { no: "05", label: "Get in touch" },
 };
 
 export default function GNB() {
-  const navList: SectionType[] = ["About", "Skills", "Projects", "Contact"];
+  const navList: SectionType[] = ["About", "Skills", "Career", "Projects", "Contact"];
   const dispatch = useDispatcher();
   const currSection = select("currSection") as SectionType | null;
   const setSection = (nav: SectionType) => {

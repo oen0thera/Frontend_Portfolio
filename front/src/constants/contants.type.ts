@@ -1,5 +1,55 @@
+import { CareerItemProps } from "@/type/Career/CareerItem.type";
 import { ProjectsItemProps } from "@/type/Projects/ProjectsItem.type";
 import { TechStackEnum } from "@/type/Skills/SkillsItem.type";
+
+export const careers: CareerItemProps[] = [
+  {
+    company: "㈜ 이모틱에이아이 (Emotic AI Co., Ltd.)",
+    position: "수석연구원 · 연구전담요원 / Full Stack Developer",
+    period: "2026.03 - 2026.10",
+    description: `이모틱에이아이에서 젠잇 서비스 개발팀으로 매주 태스크 단위 개발 및 유지보수를 담당하고, 연구전담요원으로서 엔터테인먼트 분야 AI 모델 연구를 수행했습니다. 클로드 코드 기반 하네스 엔지니어링 및 MySQL Workbench를 활용해 AI 채팅 라이브 서비스 풀스택 개발, 데이터 모델 재구조화, 채팅 수·실제 유료 재화 기준 정산 시스템, Google Analytics 기반 유입 모니터링, 대규모 DB 인덱싱·백필, 프론트·반응형 페이지 개발 등을 진행했습니다.
+
+• AI 장기기억 데이터 구조 개편
+  - JSON 기반 통합 구조에서 이벤트-상세 이벤트-이력-장기기억의 계층화된 이벤트 기반 구조로 재설계하고, V1→V2 마이그레이션 및 누락 데이터 보완 스크립트를 구현했습니다.
+
+• 정산 시스템
+  - 작품·모델별로 실제 결제 금액 기준 정산 시스템을 구축하고, 정산 템플릿-모델-이력 구조와 관리자·제작자 페이지를 E2E로 통합 구현했습니다.
+  - 정산 동의 기록 및 첨부 서류를 암호화하여 관리자 페이지에서만 복호화할 수 있도록 보안을 강화했습니다.
+
+• 광고·유입 추적
+  - Google Ads·Analytics 기반 광고 유입·전환 파이프라인을 유지보수하고, wbraid 식별자 길이 확장, 프로모션 페이지 URL 정리, 광고 채널 분류, 중복 발송 방지 등을 처리했습니다.
+
+• 이미지 필터링
+  - 잘못 출력된 이미지를 AI로 판단하여 프론트에서 필터링하는 E2E 구조를 구현해 불량 이미지 출력을 감소시켰습니다.
+
+• 기타
+  - 포럼 페이지, 공통 컴포넌트, 검색 정렬, 성인 작품 접근 제어, AI 모델 대시보드 통계 등 백엔드·프론트엔드 전반의 기능 개발과 유지보수를 진행했습니다.`,
+  },
+  {
+    company: "모바일앱개발협동조합",
+    position: "Frontend Developer · PM",
+    period: "2023.12 - 2024.11",
+    description: `외주·협업 프로젝트에서 PM 및 프론트엔드 파트장으로 활동했습니다.
+
+• (주)애드원 프론트엔드 QA (2023.12 - 2024.02)
+  - 간판업체-사용자 매칭·견적 서비스의 프론트엔드 QA를 담당했습니다.
+  - Unity·WebGL 기반 3D 간판 견적, AI 간판 추천 기능이 있는 Next.js 프로젝트의 기능 검증 및 버그 수정을 진행했습니다.
+
+• Webbizcraft (2024.05 - 2024.06)
+  - 기업 맞춤형 홈페이지 자동생성·운영 서비스의 PM 및 프론트엔드 파트장으로 참여했습니다.
+  - AWS 기반 클라우드 인프라에서 고객 입력으로 최대 3개 서브도메인 웹사이트를 자동 생성하는 기능을 개발했습니다.
+  - Google Chart 기반 관리자 대시보드를 구현해 사용자 서브도메인의 트래픽·방문자·용량을 조회하고, 사이트 허용·파일 다운로드·트래픽 및 용량 제한 등을 관리할 수 있도록 했습니다.
+
+• Commonplus (2024.07 - 2024.08)
+  - 다중 플랫폼 쇼핑몰 통합 관리 서비스의 프론트엔드 파트장으로 참여했습니다.
+  - 쿠팡·11번가·G마켓·옥션 등 외부 쇼핑몰 API 연동과 상품 등록·수정·삭제, 배송지·주문·반품·정산·고객문의 관리 기능을 개발했습니다.
+
+• Bemo (배움의 모든것) (2024.09 - 2024.11)
+  - 수강자-학원 견적 매칭 서비스의 PM 및 프론트엔드 파트장으로 참여했습니다.
+  - 학원 검색(카테고리·위치·나이·이름), 상세정보·견적 요청, AI 취미 추천 기능을 개발했습니다.
+  - Zustand·React Query 기반 상태 관리와 GitHub Actions 기반 CI/CD를 구축했습니다.`,
+  },
+];
 
 export const projects: ProjectsItemProps[] = [
   {
@@ -75,9 +125,6 @@ export const projects: ProjectsItemProps[] = [
       TechStackEnum.JENKINS,
       TechStackEnum.GITHUB,
     ],
-    links: {
-      production: "https://commonplus.store/",
-    },
     type: "important",
   },
   {
