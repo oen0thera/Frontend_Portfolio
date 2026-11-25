@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import About from "@/app/_sections/About/about";
 import Skills from "@/app/_sections/Skills/skills";
+import Career from "@/app/_sections/Career/career";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { SectionType } from "@/type/Section/Section.type";
 import select from "@/app/utils/Selector";
@@ -23,6 +24,7 @@ export default function Home() {
   const sectionRefs: Record<SectionType, RefObject<HTMLDivElement>> = {
     About: useRef<HTMLDivElement>(null),
     Skills: useRef<HTMLDivElement>(null),
+    Career: useRef<HTMLDivElement>(null),
     Projects: useRef<HTMLDivElement>(null),
     Contact: useRef<HTMLDivElement>(null),
   };
@@ -139,7 +141,13 @@ export default function Home() {
       {
         <>
           <Section
-            sections={[<About />, <Skills />, <Projects />, <Contact />]}
+            sections={[
+              <About />,
+              <Skills />,
+              <Career />,
+              <Projects />,
+              <Contact />,
+            ]}
             intersectingSections={intersectingSection}
             sectionRefs={sectionRefs}
           />
