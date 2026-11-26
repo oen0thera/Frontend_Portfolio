@@ -1,0 +1,166 @@
+@import "../../../styles/mixin.scss";
+
+.timeline_item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  
+
+  &.left {
+    justify-content: flex-start;
+
+    .timeline_card {
+      margin-right: auto;
+      margin-left: 0;
+      text-align: left;
+
+      @include mo-sm {
+        margin-left: 1.5rem;
+        margin-right: 0;
+      }
+    }
+
+    .timeline_node {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include mo-sm {
+        left: 0.75rem;
+      }
+    }
+  }
+
+  &.right {
+    justify-content: flex-end;
+
+    @include mo-sm {
+      justify-content: flex-start;
+    }
+
+    .timeline_card {
+      margin-left: auto;
+      margin-right: 0;
+      text-align: left;
+
+      @include mo-sm {
+        margin-left: 1.5rem;
+        margin-right: 0;
+      }
+    }
+
+    .timeline_node {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include mo-sm {
+        left: 0.75rem;
+      }
+    }
+  }
+}
+
+.timeline_node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+
+  @include mo-sm {
+    top: 1.25rem;
+  }
+
+  .node_dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: black;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .node_period {
+    font-family: var(--font-pretendard);
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+
+    @include mo-sm {
+      display: none;
+    }
+  }
+}
+
+.timeline_card {
+  width: calc(50% - 4rem);
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.015);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+  }
+
+  @include mo-sm {
+    width: calc(100% - 1.5rem);
+    margin-left: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+.card_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.card_period {
+  display: none;
+  font-family: var(--font-pretendard);
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.5);
+
+  @include mo-sm {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.company {
+  font-family: var(--font-pretendard);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+
+  @include mo-sm {
+    font-size: 1.2rem;
+  }
+}
+
+.position {
+  font-family: var(--font-pretendard);
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.description {
+  font-family: var(--font-pretendard);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+  white-space: pre-line;
+
+  @include mo-sm {
+    font-size: 0.85rem;
+  }
+}

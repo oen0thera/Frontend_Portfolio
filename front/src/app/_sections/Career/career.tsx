@@ -2,6 +2,7 @@
 import styles from "./career.module.scss";
 import sectionStyles from "@/components/Section/Section/section.module.scss";
 import { careers } from "@/constants/contants.type";
+import CareerItem from "@/components/Section/Career/CareerItem";
 
 export default function Career() {
   return (
@@ -13,29 +14,9 @@ export default function Career() {
       </div>
 
       <div className={styles.timeline}>
-        {careers.map((item, idx) => {
-          const isLeft = idx % 2 === 0;
-          return (
-            <div
-              key={idx}
-              className={`${styles.timeline_item} ${
-                isLeft ? styles.left : styles.right
-              } ${sectionStyles.reveal}`}
-            >
-              <div className={styles.timeline_node}>
-                <div className={styles.node_dot} />
-                <span className={styles.node_period}>{item.period}</span>
-              </div>
-              <div className={styles.timeline_card}>
-                <div className={styles.card_header}>
-                  <h3 className={styles.company}>{item.company}</h3>
-                  <span className={styles.position}>{item.position}</span>
-                </div>
-                <p className={styles.description}>{item.description}</p>
-              </div>
-            </div>
-          );
-        })}
+        {careers.map((item, idx) => (
+          <CareerItem key={idx} item={item} index={idx} />
+        ))}
       </div>
     </div>
   );
